@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: thiagolinux-jx
+    provider: github
+    repository: python-http-quickstart
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: thiagolinux-jx-python-http-quickstart
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/thiagolinux-jx/python-http-quickstart.git
+  org: thiagolinux-jx
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: python-http-quickstart
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/thiagolinux-jx/python-http-quickstart
