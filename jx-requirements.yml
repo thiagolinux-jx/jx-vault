@@ -5,27 +5,51 @@ spec:
     enabled: false
     schedule: ""
   cluster:
+    chartRepository: http://jenkins-x-chartmuseum.jx.svc.cluster.local:8080
+    clusterName: tf-jx-growing-redfish
     devEnvApprovers:
     - todo
     environmentGitOwner: todo
     gitKind: github
     gitName: github
     gitServer: https://github.com
+    gke:
+      projectNumber: "46644391235"
+    project: civic-source-330323
     provider: gke
     registry: gcr.io
+    zone: us-central1-a
   environments:
   - key: dev
+    owner: thiagolinux-jx
+    repository: jx-vault
   - key: staging
   - key: production
   ingress:
-    domain: ""
-    externalDNS: false
+    domain: 34.68.0.106.nip.io
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
-      production: false
+      production: true
+  kuberhealthy: true
+  pipelineUser:
+    username: thiagolinux-bot
   repository: nexus
   secretStorage: vault
-  vault: {}
+  storage:
+  - name: logs
+    url: gs://logs-tf-jx-growing-redfish-d239bd5472ce
+  - name: reports
+    url: gs://reports-tf-jx-growing-redfish-d239bd5472ce
+  - name: repository
+    url: gs://repository-tf-jx-growing-redfish-d239bd5472ce
+  terraformVault: true
+  vault:
+    bucket: vault-tf-jx-growing-redfish-d239bd5472ce
+    key: crypto-key-tf-jx-growing-redfish-d239bd5472ce
+    keyring: keyring-tf-jx-growing-redfish-d239bd5472ce
+    name: tf-jx-growing-redfish
+    serviceAccount: tf-jx-growing-redfish-vt
   webhook: lighthouse
