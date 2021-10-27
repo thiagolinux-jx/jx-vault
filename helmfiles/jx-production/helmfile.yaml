@@ -6,9 +6,17 @@ environments:
 repositories:
 - name: jxgh
   url: https://jenkins-x-charts.github.io/repo
+- name: dev
+  url: http://chartmuseum-jx.34.68.0.106.nip.io
 releases:
 - chart: jxgh/jx-verify
   name: jx-verify
+  namespace: jx-production
+  values:
+  - jx-values.yaml
+- chart: dev/python-http-quickstart
+  version: 0.0.1
+  name: python-http-quickstart
   namespace: jx-production
   values:
   - jx-values.yaml

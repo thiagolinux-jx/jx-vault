@@ -1,0 +1,20 @@
+# Source: python-http-quickstart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: python-http-quickstart
+  labels:
+    chart: "python-http-quickstart-0.0.1"
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  annotations:
+    meta.helm.sh/release-name: 'python-http-quickstart'
+  namespace: jx-production
+spec:
+  type: ClusterIP
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+      name: http
+  selector:
+    app: python-http-quickstart-python-http-quickstart

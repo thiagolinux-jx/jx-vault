@@ -1,0 +1,10 @@
+# Source: python-http-quickstart/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: python-http-quickstart-python-http-quickstart
+  annotations:
+    meta.helm.sh/release-name: 'python-http-quickstart'
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
