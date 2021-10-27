@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - thiagolinux-jx/jx-vault
-      target_url: http://lighthouse-jx./merge/status
+      target_url: http://lighthouse-jx.34.68.0.106.nip.io/merge/status
 kind: ConfigMap
 metadata:
   creationTimestamp: null
