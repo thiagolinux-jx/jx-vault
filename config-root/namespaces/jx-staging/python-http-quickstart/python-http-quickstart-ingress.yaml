@@ -1,0 +1,22 @@
+# Source: python-http-quickstart/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'python-http-quickstart'
+  name: python-http-quickstart
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: python-http-quickstart
+                port:
+                  number: 80
+      host: python-http-quickstart-jx-staging.34.68.0.106.nip.io

@@ -18,5 +18,7 @@ releases:
   version: 0.0.1
   name: python-http-quickstart
   namespace: jx-staging
+  values:
+  - jx-values.yaml
 templates: {}
 renderedvalues: {}
